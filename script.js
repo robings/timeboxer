@@ -6,9 +6,10 @@ function timebox(minutesToTime) {
 }
 
 function timesUp() {
-	alert ('Time to consult a fellow hippo');
+	document.getElementById('sectionBox').innerHTML="<div class=\"endTimeMessage\"><img src=\"images/pygmy-hippos.jpg\" alt=\"two pigmy hippos\" />Time to consult a fellow hippo</div>";
 }
 
 function cancelIt(cancelTime) {
 	clearTimeout(cancelTime);
+	document.location.reload(true);
 }
