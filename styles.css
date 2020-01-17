@@ -16,3 +16,33 @@ section {
 	overflow: auto;
 	margin: 0 auto;
 }
+
+section div {
+	float: left;
+	width: 50%;
+	min-height: 100px;
+	text-align: center;
+	color: whitesmoke;
+	padding: 40px;
+}
+
+.tenMins {
+	background-color: darkgreen;
+}
+
+.fifteenMins {
+	background-color: darkblue;
+}
+
+.tenMins:hover {
+	background-color: green;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+
+.fifteenMins:hover {
+	background-color: blue;
+	border: 1px solid black;
+	cursor: pointer;
+}
