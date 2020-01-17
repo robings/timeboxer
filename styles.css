@@ -46,3 +46,9 @@ section div {
 	border: 1px solid black;
 	cursor: pointer;
 }
+
+
+.timerDiv {
+	background-color: red;
+	width:100%;
+}
