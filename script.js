@@ -1,12 +1,13 @@
 function timebox(minutesToTime) {
 	//alert ('You picked'+minutesToTime);
-		timeoutVar=setTimeout(timesUp, (minutesToTime*600));
+		timeoutVar=setTimeout(timesUp, (minutesToTime*60000));
 	document.getElementById('sectionBox').innerHTML="<div class=\"timerDiv\">Don't close this browser window I'm timing for "+minutesToTime+" minutes</div><button onclick=\"cancelIt(timeoutVar);\">cancel</button>"
 		
 }
 
 function timesUp() {
-	document.getElementById('sectionBox').innerHTML="<div class=\"endTimeMessage\">Time to consult a fellow hippo<button onclick=\"javascript:document.location.reload(false)\">reset</button></div>";
+	window.focus();
+	document.getElementById('sectionBox').innerHTML="<div class=\"endTimeMessage\">Time to consult a fellow hippo<br><button onclick=\"javascript:document.location.reload(false)\">reset</button></div>";
 }
 
 function cancelIt(cancelTime) {
