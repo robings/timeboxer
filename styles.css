@@ -7,6 +7,22 @@ html {
 	font-family: "Helvetica Neue", "sans-serif";
 }
 
+nav {
+	width: 80%;
+	background-color: darkslategray;
+	color: white;
+	padding: 10px;
+	overflow: auto;
+}
+
+div.testButton {
+	float: left;
+}
+
+nav form {
+	float: right;
+}
+
 h1 {
 	text-align: center;
 }
