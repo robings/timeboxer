@@ -12,8 +12,9 @@
 		<div class="testButton">
 			<button onclick="timebox(0.1)">Test</a>
 		</div>
-		<div class="microButton">micro</div>
+		<div class="microButton" onclick="goMicro()"><ion-icon name="resize"></ion-icon></div>
 		<form>
+			<label><ion-icon name="notifications"></ion-icon></label>
 			<select id="alarms" name="alarmsChoice">
 				<option value="noSound">none</option>
 				<option value="hippo">hippo</option>
@@ -32,6 +33,8 @@
 			give me 15 minutes
 		</div>
 	</section>
+	
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 
 </html>

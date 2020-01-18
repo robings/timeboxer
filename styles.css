@@ -41,8 +41,16 @@ nav button:hover {
 	padding: 3px;
 }
 
+.microButton:hover {
+	cursor: pointer;
+}
+
 nav form {
 	float: right;
+}
+
+nav form label {
+	padding: 7px;
 }
 
 h1 {
