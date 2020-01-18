@@ -38,7 +38,3 @@ function cancelIt(cancelTime) {
 function resetIt() {
 	document.getElementById('sectionBox').innerHTML="<div id=\"tenMinutes\" class=\"tenMins\" onclick=\"timebox(10);\">give me 10 minutes</div><div id=\"fifteenMinutes\" class=\"fifteenMins\" onclick=\"timebox(15);\">give me 15 minutes</div>"	
 }
-
-function goMicro() {
-	
-}

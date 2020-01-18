@@ -19,6 +19,12 @@ nav {
 
 div.testButton {
 	float: left;
+	padding: 3px;
+}
+
+div.testButton:hover {
+	cursor: pointer;
+	color: black;
 }
 
 nav button {
@@ -36,21 +42,16 @@ nav button:hover {
 	border-color: black;
 }
 
-.microButton {
-	float: left;
-	padding: 3px;
-}
-
-.microButton:hover {
-	cursor: pointer;
-}
-
 nav form {
 	float: right;
 }
 
 nav form label {
 	padding: 7px;
+}
+
+nav form:hover {
+	color: black;
 }
 
 h1 {
@@ -145,18 +146,24 @@ button:hover {
 }
 
 @media screen and (max-width: 300px) {
+	html {
+		font-size: 10px;
+	}
 	.endTimeMessage {
-		padding-top: 50px;
-		padding-bottom: 50px;
-		font-size: 0.75rem;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		font-size: 1rem;
 	}
 	nav form {
 		float:left;
+		font-size: 1rem;
 	}
 	section div {
 		width: 100%;
+		min-height: 50px;
+		padding: 15px;
 	}
-	.microButton {
-		display: none;
+	button {
+		height: 20px;
 	}
 }
