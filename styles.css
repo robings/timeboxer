@@ -36,6 +36,11 @@ nav button:hover {
 	border-color: black;
 }
 
+.microButton {
+	float: left;
+	padding: 3px;
+}
+
 nav form {
 	float: right;
 }
@@ -141,5 +146,8 @@ button:hover {
 	}
 	section div {
 		width: 100%;
+	}
+	.microButton {
+		display: none;
 	}
 }
