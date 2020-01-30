@@ -98,7 +98,7 @@ section div {
 
 
 .timerDiv {
-	background-color: red;
+	background-color: orangered;
 	width:100%;
 	text-align: center;
 }
@@ -121,13 +121,13 @@ button:hover {
 
 .endTimeMessage {
 	width: 100%;
-	background-color: gray;
+	background-color: red;
 	background: url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: 100%;
 	font-size: 2rem;
 	padding-top:200px;
 	padding-bottom: 200px;
-	border: 10px solid #ff0000;
+	border: 10px solid red;
 }
 
 @media screen and (max-width: 745px) {
@@ -141,7 +141,7 @@ button:hover {
 @media screen and (max-width: 545px) {
 	.endTimeMessage {
 		padding-top: 50px;
-		padding-bottom: 100px;
+		padding-bottom: 25px;
 		font-size: 1rem;
 	}
 }
