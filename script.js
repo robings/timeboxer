@@ -1,3 +1,8 @@
+document.querySelector('.testButton').addEventListener('click', (e) => {
+	alert('you clicked me')
+})
+
+
 function timebox(minutesToTime) {
 	//alert ('You picked'+minutesToTime);
 		timeoutVar=setTimeout(timesUp, (minutesToTime*60000));
