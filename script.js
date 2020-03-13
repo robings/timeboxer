@@ -1,4 +1,4 @@
-document.querySelector('.testButton').addEventListener('click', (e) => {
+document.querySelector('.testButton').addEventListener('click', function testButtonClick(e) {
 	alert('you clicked me')
 })
 

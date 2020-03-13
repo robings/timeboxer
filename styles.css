@@ -60,6 +60,7 @@ h1 {
 }
 
 section {
+	position: relative;
 	width: 80%;
 	overflow: auto;
 	margin: 0 auto;
@@ -73,6 +74,21 @@ section div {
 	text-align: center;
 	color: whitesmoke;
 	padding: 40px;
+}
+
+#timeSelection {
+	display: block;
+	position: relative;
+}
+
+#timeboxing {
+	display: none;
+	position: relative;
+}
+
+#timesUp {
+	display: none;
+	position: relative;
 }
 
 .tenMins {

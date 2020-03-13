@@ -24,14 +24,29 @@
 		</form>
 	</nav>
 	<h1>timeboxer</h1>
-	<section id="sectionBox">
-		<div id="tenMinutes" class="tenMins" data-time="10">
-			give me 10 minutes
+	<section id="container">
+		<div id='timeSelection'>
+			<div id="tenMinutes" class="tenMins" data-time="10">
+				give me 10 minutes
+			</div>
+			<div id="fifteenMinutes" class="fifteenMins" data-time="15">
+				give me 15 minutes
+			</div>
 		</div>
-		<div id="fifteenMinutes" class="fifteenMins" data-time="15">
-			give me 15 minutes
+		<div id='timeboxing'>
+			<div class="timerDiv">
+				<div>Don't close this browser window I'm timeboxing for <span id='minutesToTime'></span> minutes</div>
+				<button>cancel</button>
+			</div>
+		</div>
+		<div id='timesUp'>
+			<div class="endTimeMessage">
+				<div>Time to consult a fellow hippo</div>
+				<button>reset</button>
+			</div>
 		</div>
 	</section>
+
 	
 	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
