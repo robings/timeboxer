@@ -1,5 +1,7 @@
 document.querySelector('.testButton').addEventListener('click', (e)=>{
-	timebox(0.1)
+	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none') {
+		timebox(0.1)
+	}
 })
 document.getElementById('tenMinutes').addEventListener('click', (e)=>{
 	timebox(10)
