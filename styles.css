@@ -17,14 +17,24 @@ nav {
 	font-size: 0.75rem;
 }
 
-div.testButton {
+nav .miniTimer {
+	float: left;
+	padding: 3px;
+	overflow: auto;
+	color: black;
+}
+
+.miniTimer div {
 	float: left;
 	padding: 3px;
 }
 
 div.testButton:hover {
 	cursor: pointer;
-	color: black;
+}
+
+#bigTimerSelector:hover {
+	cursor: pointer;
 }
 
 nav button {

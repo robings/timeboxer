@@ -1,8 +1,5 @@
-document.querySelector('.testButton').addEventListener('click', (e)=>{
-	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none') {
-		timebox(0.1)
-	}
-})
+document.querySelector('.testButton').addEventListener('click', toggleMiniTimerDisplay)
+document.querySelector('#bigTimerSelector').addEventListener('click', toggleBigTimerDisplay)
 document.getElementById('tenMinutes').addEventListener('click', (e)=>{
 	timebox(10)
 })

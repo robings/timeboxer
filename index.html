@@ -6,15 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
-	<script defer src="script.js"></script>
 	<script defer src="functions.js"></script>
+	<script defer src="script.js"></script>
 </head>
 
 <body>
 	<nav>
-		<div class="testButton" data-time="0.1">
-			<ion-icon name="timer"></ion-icon>
+		<div class='miniTimer'>
+			<div class="testButton" data-time="0.1">
+				<ion-icon name="timer"></ion-icon>
+			</div>
+			<div id='miniTimerDisplay'>00:00</div>
+			<div id='bigTimerSelector'>^</div>
 		</div>
+
 		<form>
 			<label><ion-icon name="notifications"></ion-icon></label>
 			<select id="alarms" name="alarmsChoice">
