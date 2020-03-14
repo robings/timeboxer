@@ -69,7 +69,7 @@ section {
 
 section div {
 	float: left;
-	width: 50%;
+	width: 100%;
 	min-height: 100px;
 	text-align: center;
 	color: whitesmoke;
@@ -93,10 +93,12 @@ section div {
 
 .tenMins {
 	background-color: darkgreen;
+	width: 50%;
 }
 
 .fifteenMins {
 	background-color: darkblue;
+	width: 50%;
 }
 
 .tenMins:hover {

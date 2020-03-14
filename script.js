@@ -1,38 +1,42 @@
-document.querySelector('.testButton').addEventListener('click', function testButtonClick(e) {
-	alert('you clicked me')
+document.querySelector('.testButton').addEventListener('click', (e)=>{
+	timebox(0.1)
 })
 
 
 function timebox(minutesToTime) {
-	//alert ('You picked'+minutesToTime);
-		timeoutVar=setTimeout(timesUp, (minutesToTime*60000));
-	document.getElementById('sectionBox').innerHTML="<div class=\"timerDiv\">Don't close this browser window I'm timeboxing for "+minutesToTime+" minutes<br><button onclick=\"cancelIt(timeoutVar);\">cancel</button></div>"
-		
+	let timeoutVar=setTimeout(timesUp, (minutesToTime*60000))
+	document.getElementById('timeSelection').style.display='none'
+	document.getElementById('minutesToTime').textContent = minutesToTime
+	document.querySelector('#timeboxing button').addEventListener('click', (e)=>{
+		cancelIt(timeoutVar)
+	})
+	document.getElementById('timeboxing').style.display='block'
 }
 
 function timesUp() {
-	window.focus();
-	var alarmChoice=document.getElementById("alarms").value;
-	var alarmSound=0;
+	window.focus()
+	let alarmChoice=document.getElementById("alarms").value
+	let alarmSound=0;
 	if (alarmChoice!="noSound") {
 		switch(alarmChoice) {
 			case "hippo":
-					alarmSound=new Audio('sounds/hippo.mp3');
-					break;
+					alarmSound=new Audio('sounds/hippo.mp3')
+					break
 			case "hippoChord":
-					alarmSound=new Audio('sounds/hippoChordReverb.mp3');
-					break;
+					alarmSound=new Audio('sounds/hippoChordReverb.mp3')
+					break
 			case "guitarChord":
-					alarmSound=new Audio('sounds/guitarChord.mp3');
-					break;
+					alarmSound=new Audio('sounds/guitarChord.mp3')
+					break
 			case "rockChord":
-					alarmSound=new Audio('sounds/rockChord.mp3');
-					break;		
+					alarmSound=new Audio('sounds/rockChord.mp3')
+					break
 		}
-		alarmSound.play();
+		alarmSound.play()
 	}
-	
-	document.getElementById('sectionBox').innerHTML="<div class=\"endTimeMessage\">Time to consult a fellow hippo<br><button onclick=\"resetIt()\">reset</button></div>";
+
+	document.getElementById('timeboxing').style.display='none'
+	document.getElementById('timesUp').style.display='block'
 }
 
 function cancelIt(cancelTime) {
@@ -41,5 +45,7 @@ function cancelIt(cancelTime) {
 }
 
 function resetIt() {
-	document.getElementById('sectionBox').innerHTML="<div id=\"tenMinutes\" class=\"tenMins\" onclick=\"timebox(10);\">give me 10 minutes</div><div id=\"fifteenMinutes\" class=\"fifteenMins\" onclick=\"timebox(15);\">give me 15 minutes</div>"	
+	document.getElementById('timeSelection').style.display='block'
+	document.getElementById('timeboxing').style.display='none'
+	document.getElementById('timesUp').style.display='none'
 }
