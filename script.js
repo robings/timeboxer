@@ -6,8 +6,11 @@ document.getElementById('tenMinutes').addEventListener('click', (e)=>{
 document.getElementById('fifteenMinutes').addEventListener('click', (e)=>{
 	timebox(15)
 })
+document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
+	timebox(document.querySelector('input[type="range"]').value)
+})
 
-document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value
+document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min(s)'
 document.querySelector('input[type="range"]').addEventListener('input', ()=>{
-	document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value
+	document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min(s)'
 })

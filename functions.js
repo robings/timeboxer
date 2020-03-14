@@ -35,7 +35,7 @@ function timebox(minutesToTime) {
         timeLeft=((minutesToTime*60000)-(seconds))
         createCountdownDisplay(timeLeft)
         if (timeLeft == 0) {
-            cancelIt(timeoutVar)
+            timesUp(timeoutVar)
         }
     },1000)
     document.getElementById('timeSelection').style.display='none'
@@ -60,8 +60,10 @@ function createCountdownDisplay(timeLeft) {
     }
 }
 
-function timesUp() {
+function timesUp(cancelTime) {
     window.focus()
+    clearTimeout(cancelTime);
+    document.getElementById('miniTimerDisplay').textContent = `00:00`
     let alarmChoice=document.getElementById("alarms").value
     let alarmSound=0;
     if (alarmChoice!="noSound") {

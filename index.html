@@ -21,19 +21,22 @@
 		</div>
 
 		<form>
-			<div class='formGroup'><label>custom time: </label>
+			<div class='formGroup'>
+				<label>custom time: </label>
 				<input type='range' min='1' max='30' value='5' />
 				<div id='customTimeDisplay'></div>
 				<div class='startCustomTime'>go</div>
 			</div>
-			<label><ion-icon name="notifications"></ion-icon></label>
-			<select id="alarms" name="alarmsChoice">
-				<option value="noSound">none</option>
-				<option value="hippo">hippo</option>
-				<option value="hippoChord">hippo chord</option>
-				<option value="guitarChord">guitar chord</option>
-				<option value="rockChord">rock chord</option>
-			</select>
+			<div class='formGroup'>
+				<label><ion-icon name="notifications"></ion-icon></label>
+				<select id="alarms" name="alarmsChoice">
+					<option value="noSound">none</option>
+					<option value="hippo">hippo</option>
+					<option value="hippoChord">hippo chord</option>
+					<option value="guitarChord">guitar chord</option>
+					<option value="rockChord">rock chord</option>
+				</select>
+			</div>
 
 		</form>
 	</nav>
