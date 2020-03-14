@@ -1,6 +1,12 @@
 document.querySelector('.testButton').addEventListener('click', (e)=>{
 	timebox(0.1)
 })
+document.getElementById('tenMinutes').addEventListener('click', (e)=>{
+	timebox(10)
+})
+document.getElementById('fifteenMinutes').addEventListener('click', (e)=>{
+	timebox(15)
+})
 
 
 function timebox(minutesToTime) {
@@ -36,6 +42,7 @@ function timesUp() {
 	}
 
 	document.getElementById('timeboxing').style.display='none'
+	document.querySelector('#timesUp button').addEventListener('click', resetIt)
 	document.getElementById('timesUp').style.display='block'
 }
 
