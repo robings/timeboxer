@@ -21,6 +21,10 @@
 		</div>
 
 		<form>
+			<label>custom time: </label>
+			<input type='range' min='1' max='30' />
+			<label id='customTimeDisplay'></label>
+			<div class='startCustomTime'>go</div>
 			<label><ion-icon name="notifications"></ion-icon></label>
 			<select id="alarms" name="alarmsChoice">
 				<option value="noSound">none</option>
@@ -29,6 +33,7 @@
 				<option value="guitarChord">guitar chord</option>
 				<option value="rockChord">rock chord</option>
 			</select>
+
 		</form>
 	</nav>
 	<h1>timeboxer</h1>
