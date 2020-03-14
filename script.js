@@ -1,5 +1,5 @@
 document.querySelector('.testButton').addEventListener('click', toggleMiniTimerDisplay)
-document.querySelector('#bigTimerSelector').addEventListener('click', toggleBigTimerDisplay)
+document.querySelector('#bigTimerDisplay').addEventListener('click', toggleBigTimerDisplay)
 document.getElementById('tenMinutes').addEventListener('click', (e)=>{
 	timebox(10)
 })

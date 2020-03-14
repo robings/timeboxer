@@ -1,17 +1,27 @@
 function toggleMiniTimerDisplay() {
     if (window.getComputedStyle(document.getElementById('miniTimerDisplay')).display === 'none') {
         document.getElementById('miniTimerDisplay').style.display = 'block'
-        document.getElementById('bigTimerSelector').style.display = 'block'
+        document.getElementById('bigTimerDisplay').style.display = 'block'
         document.querySelector('.miniTimer').style.color = 'black'
     } else {
         document.getElementById('miniTimerDisplay').style.display = 'none'
-        document.getElementById('bigTimerSelector').style.display = 'none'
+        document.getElementById('bigTimerDisplay').style.display = 'none'
         document.querySelector('.miniTimer').style.color = 'gray'
     }
 }
 
 function toggleBigTimerDisplay() {
-    console.log('Big timer Display toggle clicked')
+    bigTimerIsOn = document.getElementById('minutesToTime')
+    console.log(bigTimerIsOn.dataset['timer'])
+    if (bigTimerIsOn.dataset['timer'] === '0') {
+        bigTimerIsOn.dataset['timer'] = '1'
+        document.getElementById('bigTimerDisplay').innerHTML = '&darr;'
+        bigTimerIsOn.style.fontSize='4rem'
+    } else {
+        bigTimerIsOn.dataset['timer'] = '0'
+        document.getElementById('bigTimerDisplay').innerHTML = '&uarr;'
+        bigTimerIsOn.style.fontSize='1rem'
+    }
 }
 
 function timebox(minutesToTime) {
@@ -41,6 +51,9 @@ function createCountdownDisplay(timeLeft) {
     let secondsToDisplay = seconds < 10 ? '0'+seconds : seconds
     let minutesToDisplay = minutes < 10 ? '0'+minutes : minutes
     document.getElementById('miniTimerDisplay').textContent = `${minutesToDisplay}:${secondsToDisplay}`
+    if (document.getElementById('minutesToTime').dataset['timer'] === '1') {
+        document.getElementById('minutesToTime').textContent = `${minutesToDisplay}:${secondsToDisplay}`
+    }
 }
 
 function timesUp() {
