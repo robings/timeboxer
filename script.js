@@ -7,7 +7,7 @@ document.getElementById('fifteenMinutes').addEventListener('click', (e)=>{
 	timebox(15)
 })
 document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
-	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none'  && window.getComputedStyle(document.getElementById('timeboxing')).display === 'none') {
+	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none' && window.getComputedStyle(document.getElementById('timeboxing')).display === 'none') {
 		timebox(document.querySelector('input[type="range"]').value)
 	}
 })

@@ -40,7 +40,6 @@ div.testButton:hover {
 .formGroup {
 	display: inline-block;
 	border: 1px solid lightgray;
-	border-radius: 5px;
 	padding: 2px;
 }
 
@@ -53,13 +52,16 @@ div.testButton:hover {
 .startCustomTime {
 	display: inline-block;
 	border: 1px solid lightgray;
-	border-radius: 5px;
 	padding: 2px 10px;
 }
 
 .startCustomTime:hover {
 	border-color: black;
 	cursor: pointer;
+}
+
+select {
+	border-radius: 0;
 }
 
 nav button {
