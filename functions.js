@@ -17,10 +17,12 @@ function toggleBigTimerDisplay() {
         bigTimerIsOn.dataset['timer'] = '1'
         document.getElementById('bigTimerDisplay').innerHTML = '&darr;'
         bigTimerIsOn.style.fontSize='4rem'
+        bigTimerIsOn.style.display='block'
     } else {
         bigTimerIsOn.dataset['timer'] = '0'
         document.getElementById('bigTimerDisplay').innerHTML = '&uarr;'
         bigTimerIsOn.style.fontSize='1rem'
+        bigTimerIsOn.style.display='inline-block'
     }
 }
 
@@ -37,7 +39,9 @@ function timebox(minutesToTime) {
         }
     },1000)
     document.getElementById('timeSelection').style.display='none'
-    document.getElementById('minutesToTime').textContent = minutesToTime
+    if (document.getElementById('minutesToTime').dataset['timer'] === '0') {
+        document.getElementById('minutesToTime').textContent = minutesToTime
+    }
     document.querySelector('#timeboxing button').addEventListener('click', (e)=>{
         cancelIt(timeoutVar)
     })
