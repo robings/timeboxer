@@ -91,6 +91,7 @@ function timesUp(cancelTime) {
 
     document.getElementById('timeboxing').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
+    document.querySelector('body').style.backgroundColor='orangered'
     document.getElementById('timesUp').style.display='block'
 }
 
@@ -101,6 +102,7 @@ function cancelIt(cancelTime) {
 }
 
 function resetIt() {
+    document.querySelector('body').style.backgroundColor='whitesmoke'
     document.getElementById('timeSelection').style.display='block'
     document.getElementById('timeboxing').style.display='none'
     document.getElementById('timesUp').style.display='none'
