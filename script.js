@@ -8,6 +8,7 @@ document.getElementById('fifteenMinutes').addEventListener('click', (e)=>{
 })
 document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
 	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none' && window.getComputedStyle(document.getElementById('timeboxing')).display === 'none') {
+		document.querySelector('.formContainer').style.display = 'none'
 		timebox(document.querySelector('input[type="range"]').value)
 	}
 })
@@ -15,4 +16,10 @@ document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
 document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min'
 document.querySelector('input[type="range"]').addEventListener('input', ()=>{
 	document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min'
+})
+
+document.querySelector('.settingsButton ion-icon').addEventListener('click', settingsDisplay)
+
+document.querySelector('.close span').addEventListener('click', ()=> {
+	document.querySelector('.formContainer').style.display = 'none'
 })

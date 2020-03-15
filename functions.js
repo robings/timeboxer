@@ -10,7 +10,6 @@ function toggleMiniTimerDisplay() {
 
 function toggleBigTimerDisplay() {
     bigTimerIsOn = document.getElementById('minutesToTime')
-    console.log(bigTimerIsOn.dataset['timer'])
     if (bigTimerIsOn.dataset['timer'] === '0') {
         bigTimerIsOn.dataset['timer'] = '1'
         document.getElementById('bigTimerDisplay').innerHTML = '&darr;'
@@ -21,6 +20,14 @@ function toggleBigTimerDisplay() {
         document.getElementById('bigTimerDisplay').innerHTML = '&uarr;'
         bigTimerIsOn.style.fontSize='1rem'
         bigTimerIsOn.style.display='inline-block'
+    }
+}
+
+function settingsDisplay() {
+    if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'none') {
+        document.querySelector('.formContainer').style.display = 'block'
+    } else {
+        document.querySelector('.formContainer').style.display = 'none'
     }
 }
 

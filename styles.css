@@ -11,6 +11,7 @@ body {
 	width: 325px;
 	height: 325px;
 	border: 1px solid lightgray;
+	border-radius: 5px;
 	margin: 5px;
 }
 
@@ -59,17 +60,25 @@ div.testButton:hover {
 }
 
 .formContainer {
+	z-index: 1;
 	display: none;
 	position: absolute;
 	top: 45px;
-	min-height: 100px;
+	left: 38px;
+	min-height: 75px;
+	width: 260px;
 	overflow: auto;
+	background-color: whitesmoke;
+	border: 1px solid lightgray;
+	padding: 5px;
 }
 
 .formGroup {
 	display: inline-block;
 	border: 1px solid lightgray;
 	padding: 2px;
+	width: 100%;
+	margin-bottom: 5px;
 }
 
 #customTimeDisplay {
@@ -89,8 +98,14 @@ div.testButton:hover {
 	cursor: pointer;
 }
 
-select {
-	border-radius: 0;
+.close {
+	width: 100%;
+	text-align: right;
+}
+
+.close span:hover {
+	color: orangered;
+	cursor: pointer;
 }
 
 nav button {
@@ -123,6 +138,7 @@ nav form:hover {
 h1 {
 	text-align: center;
 	font-size: 2rem;
+	margin: 10px 0;
 }
 
 section {
