@@ -135,6 +135,10 @@ nav form:hover {
 	color: black;
 }
 
+.slider {
+	width: 125px;
+}
+
 h1 {
 	text-align: center;
 	font-size: 2rem;
