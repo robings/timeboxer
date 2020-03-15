@@ -152,7 +152,6 @@ section {
 section div {
 	float: left;
 	width: 100%;
-	min-height: 100px;
 	text-align: center;
 	color: whitesmoke;
 }
@@ -176,12 +175,14 @@ section div {
 	background-color: darkgreen;
 	width: 50%;
 	padding: 40px;
+	border: 1px solid transparent;
 }
 
 .fifteenMins {
 	background-color: darkblue;
 	width: 50%;
 	padding: 40px;
+	border: 1px solid transparent;
 }
 
 .tenMins:hover {
@@ -226,47 +227,7 @@ button:hover {
 	background-color: red;
 	background: url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: cover;
-	font-size: 2rem;
-	padding-top:200px;
-	padding-bottom: 200px;
-	border: 10px solid red;
-}
-
-@media screen and (max-width: 745px) {
-	.endTimeMessage {
-		padding-top: 150px;
-		padding-bottom: 150px;
-		font-size: 1.5rem;
-	}
-}
-
-@media screen and (max-width: 545px) {
-	.endTimeMessage {
-		padding-top: 50px;
-		padding-bottom: 25px;
-		font-size: 1rem;
-	}
-}
-
-@media screen and (max-width: 300px) {
-	html {
-		font-size: 10px;
-	}
-	.endTimeMessage {
-		padding-top: 25px;
-		padding-bottom: 25px;
-		font-size: 1rem;
-	}
-	nav form {
-		float:left;
-		font-size: 1rem;
-	}
-	section div {
-		width: 100%;
-		min-height: 50px;
-		padding: 15px;
-	}
-	button {
-		height: 20px;
-	}
+	font-size: 1rem;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
