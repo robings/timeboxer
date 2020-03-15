@@ -16,29 +16,31 @@
 			<div class="testButton" data-time="0.1">
 				<ion-icon name="timer"></ion-icon>
 			</div>
-			<div id='miniTimerDisplay'>00:00</div>
 			<div id='bigTimerDisplay'>&uarr;</div>
+			<div id='miniTimerDisplay'>00:00</div>
 		</div>
-
-		<form>
-			<div class='formGroup'>
-				<label>custom time: </label>
-				<input type='range' min='1' max='30' value='5' />
-				<div id='customTimeDisplay'></div>
-				<div class='startCustomTime'>go</div>
-			</div>
-			<div class='formGroup'>
-				<label><ion-icon name="notifications"></ion-icon></label>
-				<select id="alarms" name="alarmsChoice">
-					<option value="noSound">none</option>
-					<option value="hippo">hippo</option>
-					<option value="hippoChord">hippo chord</option>
-					<option value="guitarChord">guitar chord</option>
-					<option value="rockChord">rock chord</option>
-				</select>
-			</div>
-
-		</form>
+		<div class='settingsButton'>
+			<ion-icon name="settings"></ion-icon>
+		</div>
+		<div class='formContainer'>
+			<form>
+				<div class='formGroup'>
+					<input type='range' min='1' max='30' value='5' />
+					<div id='customTimeDisplay'></div>
+					<div class='startCustomTime'>go</div>
+				</div>
+				<div class='formGroup'>
+					<label><ion-icon name="notifications"></ion-icon></label>
+					<select id="alarms" name="alarmsChoice">
+						<option value="noSound">none</option>
+						<option value="hippo">hippo</option>
+						<option value="hippoChord">hippo chord</option>
+						<option value="guitarChord">guitar chord</option>
+						<option value="rockChord">rock chord</option>
+					</select>
+				</div>
+			</form>
+		</div>
 	</nav>
 	<h1>timeboxer</h1>
 	<section id="container">

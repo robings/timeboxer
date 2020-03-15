@@ -12,7 +12,7 @@ document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
 	}
 })
 
-document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min(s)'
+document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min'
 document.querySelector('input[type="range"]').addEventListener('input', ()=>{
-	document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min(s)'
+	document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min'
 })

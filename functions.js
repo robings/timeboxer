@@ -1,11 +1,9 @@
 function toggleMiniTimerDisplay() {
     if (window.getComputedStyle(document.getElementById('miniTimerDisplay')).display === 'none') {
         document.getElementById('miniTimerDisplay').style.display = 'block'
-        document.getElementById('bigTimerDisplay').style.display = 'block'
         document.querySelector('.miniTimer').style.color = 'black'
     } else {
         document.getElementById('miniTimerDisplay').style.display = 'none'
-        document.getElementById('bigTimerDisplay').style.display = 'none'
         document.querySelector('.miniTimer').style.color = 'gray'
     }
 }
