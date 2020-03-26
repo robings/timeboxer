@@ -1,3 +1,8 @@
+function firstClick() {
+    alarmSound.play()
+    document.querySelector('body').removeEventListener('click', firstClick)
+}
+
 function toggleMiniTimerDisplay() {
     if (window.getComputedStyle(document.getElementById('miniTimerDisplay')).display === 'none') {
         document.getElementById('miniTimerDisplay').style.display = 'block'
@@ -67,27 +72,9 @@ function createCountdownDisplay(timeLeft) {
 
 function timesUp(cancelTime) {
     window.focus()
-    clearTimeout(cancelTime);
+    clearTimeout(cancelTime)
     document.getElementById('miniTimerDisplay').textContent = `00:00`
-    let alarmChoice=document.getElementById("alarms").value
-    let alarmSound=0;
-    if (alarmChoice!="noSound") {
-        switch(alarmChoice) {
-            case "hippo":
-                alarmSound=new Audio('sounds/hippo.mp3')
-                break
-            case "hippoChord":
-                alarmSound=new Audio('sounds/hippoChordReverb.mp3')
-                break
-            case "guitarChord":
-                alarmSound=new Audio('sounds/guitarChord.mp3')
-                break
-            case "rockChord":
-                alarmSound=new Audio('sounds/rockChord.mp3')
-                break
-        }
-        alarmSound.play()
-    }
+    playSound()
 
     document.getElementById('timeboxing').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
@@ -106,4 +93,26 @@ function resetIt() {
     document.getElementById('timeSelection').style.display='block'
     document.getElementById('timeboxing').style.display='none'
     document.getElementById('timesUp').style.display='none'
+}
+
+function playSound() {
+    let alarmChoice=document.getElementById("alarms").value
+
+    if (alarmChoice!="noSound") {
+        switch(alarmChoice) {
+            case "hippo":
+                alarmSound.src='sounds/hippo.mp3'
+                break
+            case "hippoChord":
+                alarmSound.src='sounds/hippoChordReverb.mp3'
+                break
+            case "guitarChord":
+                alarmSound.src='sounds/guitarChord.mp3'
+                break
+            case "rockChord":
+                alarmSound.src='sounds/rockChord.mp3'
+                break
+        }
+        alarmSound.play()
+    }
 }
