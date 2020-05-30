@@ -1,27 +1,41 @@
+@font-face {
+	font-family: IBMPlexMono;
+	src: url(./IBMPlexMono-Regular.ttf);
+}
+
+@font-face {
+	font-family: IBMPlexSans;
+	src: url(./IBMPlexSans-Regular.ttf);
+}
+
 * {
 	box-sizing: border-box;
 }
 
-html {
-	background-color: whitesmoke;
-	font-family: "Helvetica Neue", "sans-serif";
+body {
+	font-family: "IBMPlexMono", "Helvetica Neue", sans-serif;
+	background-color: #1C2527;
+	color: #EBBD3F;
 }
 
-body {
+#timerContainer {
 	width: 325px;
 	height: 325px;
-	border: 1px solid lightgray;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #444444;
 	border-radius: 5px;
-	margin: 5px;
 }
 
 nav {
 	width: 80%;
 	padding: 10px 10px 0 10px;
 	overflow: auto;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #444444;
 	margin: 0 auto;
-	color: gray;
+	color: #444444;
 	font-size: 0.75rem;
 }
 
@@ -29,7 +43,19 @@ nav .miniTimer {
 	float: left;
 	padding: 3px;
 	overflow: auto;
-	color: black;
+	color: #444444;
+}
+
+nav .testButton:hover {
+	color: #EBBD3F;
+}
+
+nav #miniTimerDisplay {
+	color: #EBBD3F;
+}
+
+nav #bigTimerDisplay:hover {
+	color: #EBBD3F;
 }
 
 .miniTimer div {
@@ -42,7 +68,7 @@ div.testButton:hover {
 }
 
 #bigTimerDisplay {
-	color: black;
+	color: #444444;
 }
 
 #bigTimerDisplay:hover {
@@ -55,7 +81,7 @@ div.testButton:hover {
 }
 
 .settingsButton:hover {
-	color: black;
+	color: #EBBD3F;
 	cursor: pointer;
 }
 
@@ -68,14 +94,14 @@ div.testButton:hover {
 	min-height: 75px;
 	width: 260px;
 	overflow: auto;
-	background-color: whitesmoke;
-	border: 1px solid lightgray;
+	background-color: #1C2527;
+	border: 1px solid #444444;
 	padding: 5px;
 }
 
 .formGroup {
 	display: inline-block;
-	border: 1px solid lightgray;
+	border: 1px solid #444444;
 	padding: 2px;
 	width: 100%;
 	margin-bottom: 5px;
@@ -89,12 +115,13 @@ div.testButton:hover {
 
 .startCustomTime {
 	display: inline-block;
-	border: 1px solid lightgray;
+	border: 1px solid #444444;
+	border-radius: 4px;
 	padding: 2px 10px;
 }
 
 .startCustomTime:hover {
-	border-color: black;
+	border-color: #EBBD3F;
 	cursor: pointer;
 }
 
@@ -104,7 +131,7 @@ div.testButton:hover {
 }
 
 .close span:hover {
-	color: orangered;
+	color: #E81123;
 	cursor: pointer;
 }
 
@@ -113,14 +140,14 @@ nav button {
 	background-color: inherit;
 	color: inherit;
 	font-size: inherit;
-	border-color: gray;
+	border-color: #444444;
 	height: 20px;
 }
 
 nav button:hover {
-	background-color: white;
-	color: black;
-	border-color: black;
+	background-color: #EEEEEE;
+	color: #EBBD3F;
+	border-color: #444444;
 }
 
 nav form {
@@ -132,11 +159,52 @@ nav form label {
 }
 
 nav form:hover {
-	color: black;
+	color: #EBBD3F;
 }
 
 .slider {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 3px;
+	background: #444444;
+	outline: none;
+	border-radius: 3px;
 	width: 125px;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+#alarms {
+	background-color: #1C2527;
+	color: #444444;
+	border: 1px solid #444444;
+	border-radius: 4px;
+	padding: 2px 3px;
+}
+
+#alarms:hover {
+	color: #EBBD3F;
+	border-color: #EBBD3F;
+}
+
+#alarms:focus {
+	outline: none;
 }
 
 h1 {
@@ -157,7 +225,7 @@ section div {
 	float: left;
 	width: 100%;
 	text-align: center;
-	color: whitesmoke;
+	color: #EEEEEE;
 }
 
 #timeSelection {
@@ -176,35 +244,37 @@ section div {
 }
 
 .tenMins {
-	background-color: darkgreen;
+	background-color: #10893E;
+	color: #EEEEEE;
 	width: 50%;
 	padding: 40px;
 	border: 1px solid transparent;
 }
 
 .fifteenMins {
-	background-color: darkblue;
+	background-color: #0063B1;
+	color: #EEEEEE;
 	width: 50%;
 	padding: 40px;
 	border: 1px solid transparent;
 }
 
 .tenMins:hover {
-	background-color: green;
-	border: 1px solid black;
+	background-color: #00CC6A;
+	border: 1px solid #444444;
 	cursor: pointer;
 }
 
 
 .fifteenMins:hover {
-	background-color: blue;
-	border: 1px solid black;
+	background-color: #0078D7;
+	border: 1px solid #444444;
 	cursor: pointer;
 }
 
 
 .timerDiv {
-	background-color: orangered;
+	background-color: #E81123;
 	width:100%;
 	text-align: center;
 	padding: 20px;
@@ -212,8 +282,8 @@ section div {
 
 button {
 	background-color: rgba(255, 255, 255, 0);
-	color: white;
-	border: 1px solid white;
+	color: #EEEEEE;
+	border: 1px solid #EEEEEE;
 	width: 90px;
 	height: 30px;
 	margin-top: 20px;
@@ -228,11 +298,10 @@ button:hover {
 
 .endTimeMessage {
 	width: 100%;
-	background-color: red;
-	background: url('images/pygmy-hippos.jpg') no-repeat;
+	background: #E81123 url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: cover;
 	font-size: 1rem;
 	padding-top: 25px;
 	padding-bottom: 25px;
-	border: 1px solid black;
+	border: 1px solid #444444;
 }
