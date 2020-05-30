@@ -19,8 +19,8 @@ body {
 }
 
 #timerContainer {
-	width: 325px;
-	height: 325px;
+	width: 600px;
+	height: 600px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -215,7 +215,7 @@ h1 {
 
 section {
 	position: relative;
-	width: 80%;
+	width: 100%;
 	overflow: auto;
 	margin: 0 auto;
 	text-align: center;
@@ -243,35 +243,27 @@ section div {
 	position: relative;
 }
 
-.tenMins {
-	background-color: #10893E;
-	color: #EEEEEE;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timer {
+	width: 400px;
 }
 
-.fifteenMins {
-	background-color: #0063B1;
-	color: #EEEEEE;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timeButtonContainer {
+	width: 80%;
+	margin: 0 auto;
+	float: none;
 }
 
-.tenMins:hover {
-	background-color: #00CC6A;
+.tenMins, .fifteenMins {
+	color: #EBBD3F;
+	width: 50%;
+	padding: 10px;
 	border: 1px solid #444444;
+}
+
+.tenMins:hover, .fifteenMins:hover {
+	border: 1px solid #EBBD3F;
 	cursor: pointer;
 }
-
-
-.fifteenMins:hover {
-	background-color: #0078D7;
-	border: 1px solid #444444;
-	cursor: pointer;
-}
-
 
 .timerDiv {
 	background-color: #E81123;
