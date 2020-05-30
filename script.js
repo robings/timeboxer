@@ -1,3 +1,6 @@
+const alarmSound = new Audio()
+
+document.querySelector('body').addEventListener('click', firstClick)
 document.querySelector('.testButton').addEventListener('click', toggleMiniTimerDisplay)
 document.querySelector('#bigTimerDisplay').addEventListener('click', toggleBigTimerDisplay)
 document.getElementById('tenMinutes').addEventListener('click', (e)=>{
@@ -23,3 +26,5 @@ document.querySelector('.settingsButton ion-icon').addEventListener('click', set
 document.querySelector('.close span').addEventListener('click', ()=> {
 	document.querySelector('.formContainer').style.display = 'none'
 })
+
+document.getElementById('alarms').addEventListener('change', playSound)
