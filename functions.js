@@ -6,10 +6,10 @@ function firstClick() {
 function toggleMiniTimerDisplay() {
     if (window.getComputedStyle(document.getElementById('miniTimerDisplay')).display === 'none') {
         document.getElementById('miniTimerDisplay').style.display = 'block'
-        document.querySelector('.miniTimer').style.color = 'black'
+        document.querySelector('.miniTimer').style.color = '#444444'
     } else {
         document.getElementById('miniTimerDisplay').style.display = 'none'
-        document.querySelector('.miniTimer').style.color = 'gray'
+        document.querySelector('.miniTimer').style.color = '#444444'
     }
 }
 
@@ -78,7 +78,7 @@ function timesUp(cancelTime) {
 
     document.getElementById('timeboxing').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
-    document.querySelector('body').style.backgroundColor='orangered'
+    document.querySelector('body').style.backgroundColor='#E81123'
     document.getElementById('timesUp').style.display='block'
 }
 
@@ -89,7 +89,7 @@ function cancelIt(cancelTime) {
 }
 
 function resetIt() {
-    document.querySelector('body').style.backgroundColor='whitesmoke'
+    document.querySelector('body').style.backgroundColor='#1C2527'
     document.getElementById('timeSelection').style.display='block'
     document.getElementById('timeboxing').style.display='none'
     document.getElementById('timesUp').style.display='none'
