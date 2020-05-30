@@ -116,6 +116,7 @@ div.testButton:hover {
 .startCustomTime {
 	display: inline-block;
 	border: 1px solid #444444;
+	border-radius: 4px;
 	padding: 2px 10px;
 }
 
@@ -162,7 +163,48 @@ nav form:hover {
 }
 
 .slider {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 3px;
+	background: #444444;
+	outline: none;
+	border-radius: 3px;
 	width: 125px;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+#alarms {
+	background-color: #1C2527;
+	color: #444444;
+	border: 1px solid #444444;
+	border-radius: 4px;
+	padding: 2px 3px;
+}
+
+#alarms:hover {
+	color: #EBBD3F;
+	border-color: #EBBD3F;
+}
+
+#alarms:focus {
+	outline: none;
 }
 
 h1 {
