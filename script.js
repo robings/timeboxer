@@ -4,10 +4,10 @@ document.querySelector('body').addEventListener('click', firstClick)
 document.querySelector('.testButton').addEventListener('click', toggleMiniTimerDisplay)
 document.querySelector('#bigTimerDisplay').addEventListener('click', toggleBigTimerDisplay)
 document.getElementById('tenMinutes').addEventListener('click', (e)=>{
-	timebox(10)
+	timeBox(10)
 })
 document.getElementById('fifteenMinutes').addEventListener('click', (e)=>{
-	timebox(15)
+	timeBox(15)
 })
 document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
 	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none' && window.getComputedStyle(document.getElementById('timeboxing')).display === 'none') {

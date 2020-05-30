@@ -12,33 +12,33 @@ for (let i=0; i<(12*5); i++) {
     svg.appendChild(newLine)
 }
 
-let timeToTime = 5
+function timeBox(minutesToTime) {
+    let m = minutesToTime
+    let s = minutesToTime * 60
 
-let m = timeToTime
-let s = timeToTime * 60
+    let hoursRotationSet = (m*(360/60)) + (((s%60*(360/60))/60))
 
-console.log (s%60)
+    document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
+    document.getElementById('turningClockFace').style.transformOrigin='center'
 
-let hoursRotationSet = (m*(360/60)) + (((s%60*(360/60))/60))
+    setRotation(s)
 
-document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
-document.getElementById('turningClockFace').style.transformOrigin='center'
+    let timerInterval = setInterval(()=> {
+        s--
+        setRotation(s)
+    }, 1000)
 
-setRotation()
+    document.getElementById('timeButtonContainer').style.display='none'
+}
 
-let timerInterval = setInterval(()=> {
-    s--
-    setRotation()
-}, 1000)
-
-function setRotation() {
+function setRotation(s) {
     let secondsRotation = s === 0 ? 0 : (s%60*(360/60))
     m = s < 60 ? 0 : (s-s%60)/60
 
     document.getElementById('secondsRing').style.transform=`rotate(${-secondsRotation}deg)`
     document.getElementById('secondsRing').style.transformOrigin='center'
 
-    hoursRotationSet = s === 0 ? 0 : (m*(360/60)) + (((s%60*(360/60))/60))
+    let hoursRotationSet = s === 0 ? 0 : (m*(360/60)) + (((s%60*(360/60))/60))
 
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'

@@ -36,7 +36,7 @@ function settingsDisplay() {
     }
 }
 
-function timebox(minutesToTime) {
+function timeboxOld(minutesToTime) {
     let seconds=0
     let timeLeft=((minutesToTime*60000)-(seconds))
     createCountdownDisplay(timeLeft)
