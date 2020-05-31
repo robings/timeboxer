@@ -15,10 +15,8 @@ document.querySelectorAll('.timeSelectButton')[2].addEventListener('click', (e)=
 })
 
 document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
-	if (window.getComputedStyle(document.getElementById('timesUp')).display === 'none' && window.getComputedStyle(document.getElementById('timeboxing')).display === 'none') {
-		document.querySelector('.formContainer').style.display = 'none'
-		timeBox(document.querySelector('input[type="range"]').value)
-	}
+	document.querySelector('.formContainer').style.display = 'none'
+	timeBox(document.querySelector('input[type="range"]').value)
 })
 
 document.getElementById('customTimeDisplay').textContent = document.querySelector('input[type="range"]').value + ' min'

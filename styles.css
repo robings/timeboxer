@@ -104,6 +104,10 @@ div.testButton:hover {
 	border-color: #EBBD3F;
 }
 
+.formContainer:hover #alarms {
+	color: #EBBD3F;
+}
+
 .formGroup {
 	display: inline-block;
 	border: 1px solid #444444;

@@ -24,10 +24,12 @@ function timeBox(minutesToTime) {
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
     setRotation(s)
+    createCountdownDisplay(s)
 
     timerInterval = setInterval(()=> {
         s--
         setRotation(s)
+        createCountdownDisplay(s)
     }, 1000)
 
     document.getElementById('timeButtonContainer').style.display='none'
@@ -38,7 +40,7 @@ function timeBox(minutesToTime) {
     })
 }
 
-function setRotation(s) {
+function setRotation(s, origin = 0) {
     let secondsRotation = s === 0 ? 0 : (s%60*(360/60))
     m = s < 60 ? 0 : (s-s%60)/60
 
@@ -50,7 +52,7 @@ function setRotation(s) {
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
-    if (s === 0) {
+    if (s === 0 && origin === 0) {
         timesUp(timerInterval)
     }
 }
