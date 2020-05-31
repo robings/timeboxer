@@ -104,7 +104,7 @@ div.testButton:hover {
 	border-color: #EBBD3F;
 }
 
-.formContainer:hover #alarms {
+.formContainer:hover select {
 	color: #EBBD3F;
 }
 
@@ -199,7 +199,7 @@ nav form:hover {
 	cursor: pointer;
 }
 
-#alarms {
+select {
 	background-color: #1C2527;
 	color: #444444;
 	border: 1px solid #444444;
@@ -207,12 +207,12 @@ nav form:hover {
 	padding: 2px 3px;
 }
 
-#alarms:hover {
+select:hover {
 	color: #EBBD3F;
 	border-color: #EBBD3F;
 }
 
-#alarms:focus {
+select:focus {
 	outline: none;
 }
 
