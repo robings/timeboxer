@@ -13,7 +13,6 @@ for (let i=0; i<(12*5); i++) {
 }
 
 let timerInterval
-let startTime
 
 function timeBox(minutesToTime) {
     let m = minutesToTime
@@ -28,20 +27,20 @@ function timeBox(minutesToTime) {
         document.querySelector('.formContainer').style.display = 'none'
     }
 
+    document.getElementById('timingMode').disabled=true
+    document.getElementById('startCustomTime').disabled=true
+
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
     setRotation(s)
     createCountdownDisplay(s)
 
-    console.log (document.getElementById('timingMode').value)
-
     timerInterval = setInterval(()=> {
         if (document.getElementById('timingMode').value === 'compareSystemTime') {
             let timeNow = new Date()
             let timeDifference = Math.floor((timeNow - startTime)/1000)
             remainingS = s - timeDifference
-            // console.log(timeDifference, remainingS)
         } else {
             remainingS--
         }
@@ -70,7 +69,7 @@ function setRotation(s, origin = 0) {
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
-    if (s === 0 && origin === 0) {
+    if (s <= 0 && origin === 0) {
         timesUp(timerInterval)
     }
 }

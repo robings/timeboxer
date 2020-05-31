@@ -54,24 +54,12 @@ nav #miniTimerDisplay {
 	color: #EBBD3F;
 }
 
-nav #bigTimerDisplay:hover {
-	color: #EBBD3F;
-}
-
 .miniTimer div {
 	float: left;
 	padding: 3px;
 }
 
 div.testButton:hover {
-	cursor: pointer;
-}
-
-#bigTimerDisplay {
-	color: #444444;
-}
-
-#bigTimerDisplay:hover {
 	cursor: pointer;
 }
 
@@ -122,18 +110,6 @@ div.testButton:hover {
 	margin: 0 5px;
 }
 
-.startCustomTime {
-	display: inline-block;
-	border: 1px solid #444444;
-	border-radius: 4px;
-	padding: 2px 10px;
-}
-
-.startCustomTime:hover {
-	border-color: #EBBD3F;
-	cursor: pointer;
-}
-
 .close {
 	width: 100%;
 	text-align: right;
@@ -145,18 +121,21 @@ div.testButton:hover {
 }
 
 nav button {
+	display: inline-block;
 	margin: 0;
 	background-color: inherit;
 	color: inherit;
 	font-size: inherit;
 	border-color: #444444;
-	height: 20px;
+	border-radius: 4px;
+	width: auto;
+	height: 23px;
+	padding: 2px 10px;
 }
 
 nav button:hover {
-	background-color: #EEEEEE;
 	color: #EBBD3F;
-	border-color: #444444;
+	border-color: #EBBD3F;
 }
 
 nav form {

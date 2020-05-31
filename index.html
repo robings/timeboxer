@@ -21,7 +21,6 @@
 			<div class="testButton" data-time="0.1">
 				<ion-icon name="timer"></ion-icon>
 			</div>
-			<div id='bigTimerDisplay'>&uarr;</div>
 			<div id='miniTimerDisplay'>00:00</div>
 		</div>
 		<div class='settingsButton'>
@@ -32,7 +31,7 @@
 				<div class='formGroup'>
 					<input type='range' min='1' max='59' value='5' class='slider' />
 					<div id='customTimeDisplay'></div>
-					<div class='startCustomTime'>go</div>
+					<button id='startCustomTime'>go</button>
 				</div>
 				<div class='formGroup'>
 					<label><ion-icon name="notifications"></ion-icon></label>
@@ -47,8 +46,8 @@
 				<div class="formGroup">
 					<label><ion-icon name="timer"></ion-icon> mode</label>
 					<select id="timingMode" name="timingMode">
-						<option value="decrement">decrement</option>
 						<option value="compareSystemTime">system time compare</option>
+						<option value="decrement">decrement</option>
 					</select>
 				</div>
 				<div class='close'><span>X</span></div>

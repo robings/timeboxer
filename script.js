@@ -2,7 +2,6 @@ const alarmSound = new Audio()
 
 document.querySelector('body').addEventListener('click', firstClick)
 document.querySelector('.testButton').addEventListener('click', toggleMiniTimerDisplay)
-document.querySelector('#bigTimerDisplay').addEventListener('click', toggleBigTimerDisplay)
 
 document.querySelectorAll('.timeSelectButton')[0].addEventListener('click', (e)=>{
 	timeBox(5)
@@ -14,7 +13,8 @@ document.querySelectorAll('.timeSelectButton')[2].addEventListener('click', (e)=
 	timeBox(15)
 })
 
-document.querySelector('.startCustomTime').addEventListener('click', (e)=>{
+document.getElementById('startCustomTime').addEventListener('click', (e)=>{
+	e.preventDefault()
 	document.querySelector('.formContainer').style.display = 'none'
 	timeBox(document.querySelector('input[type="range"]').value)
 })
