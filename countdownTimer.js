@@ -17,12 +17,18 @@ let timerInterval
 function timeBox(minutesToTime) {
     let m = minutesToTime
     let s = minutesToTime * 60
+    let remainingS = s
+
+    let startTime = new Date()
 
     let hoursRotationSet = (m*(360/60)) + (((s%60*(360/60))/60))
 
     if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'block') {
         document.querySelector('.formContainer').style.display = 'none'
     }
+
+    document.getElementById('timingMode').disabled=true
+    document.getElementById('startCustomTime').disabled=true
 
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
@@ -31,9 +37,16 @@ function timeBox(minutesToTime) {
     createCountdownDisplay(s)
 
     timerInterval = setInterval(()=> {
-        s--
-        setRotation(s)
-        createCountdownDisplay(s)
+        if (document.getElementById('timingMode').value === 'compareSystemTime') {
+            let timeNow = new Date()
+            let timeDifference = Math.floor((timeNow - startTime)/1000)
+            remainingS = s - timeDifference
+        } else {
+            remainingS--
+        }
+
+        setRotation(remainingS)
+        createCountdownDisplay(remainingS)
     }, 1000)
 
     document.getElementById('timeButtonContainer').style.display='none'
@@ -56,7 +69,7 @@ function setRotation(s, origin = 0) {
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
-    if (s === 0 && origin === 0) {
+    if (s <= 0 && origin === 0) {
         timesUp(timerInterval)
     }
 }

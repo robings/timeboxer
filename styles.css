@@ -54,24 +54,12 @@ nav #miniTimerDisplay {
 	color: #EBBD3F;
 }
 
-nav #bigTimerDisplay:hover {
-	color: #EBBD3F;
-}
-
 .miniTimer div {
 	float: left;
 	padding: 3px;
 }
 
 div.testButton:hover {
-	cursor: pointer;
-}
-
-#bigTimerDisplay {
-	color: #444444;
-}
-
-#bigTimerDisplay:hover {
 	cursor: pointer;
 }
 
@@ -90,7 +78,7 @@ div.testButton:hover {
 	display: none;
 	position: absolute;
 	top: 45px;
-	left: 38px;
+	right: 5%;
 	min-height: 75px;
 	width: 260px;
 	overflow: auto;
@@ -104,7 +92,7 @@ div.testButton:hover {
 	border-color: #EBBD3F;
 }
 
-.formContainer:hover #alarms {
+.formContainer:hover select {
 	color: #EBBD3F;
 }
 
@@ -122,18 +110,6 @@ div.testButton:hover {
 	margin: 0 5px;
 }
 
-.startCustomTime {
-	display: inline-block;
-	border: 1px solid #444444;
-	border-radius: 4px;
-	padding: 2px 10px;
-}
-
-.startCustomTime:hover {
-	border-color: #EBBD3F;
-	cursor: pointer;
-}
-
 .close {
 	width: 100%;
 	text-align: right;
@@ -145,18 +121,21 @@ div.testButton:hover {
 }
 
 nav button {
+	display: inline-block;
 	margin: 0;
 	background-color: inherit;
 	color: inherit;
 	font-size: inherit;
 	border-color: #444444;
-	height: 20px;
+	border-radius: 4px;
+	width: auto;
+	height: 23px;
+	padding: 2px 10px;
 }
 
 nav button:hover {
-	background-color: #EEEEEE;
 	color: #EBBD3F;
-	border-color: #444444;
+	border-color: #EBBD3F;
 }
 
 nav form {
@@ -199,7 +178,7 @@ nav form:hover {
 	cursor: pointer;
 }
 
-#alarms {
+select {
 	background-color: #1C2527;
 	color: #444444;
 	border: 1px solid #444444;
@@ -207,12 +186,12 @@ nav form:hover {
 	padding: 2px 3px;
 }
 
-#alarms:hover {
+select:hover {
 	color: #EBBD3F;
 	border-color: #EBBD3F;
 }
 
-#alarms:focus {
+select:focus {
 	outline: none;
 }
 

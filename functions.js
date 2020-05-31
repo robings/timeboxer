@@ -13,21 +13,6 @@ function toggleMiniTimerDisplay() {
     }
 }
 
-function toggleBigTimerDisplay() {
-    bigTimerIsOn = document.getElementById('minutesToTime')
-    if (bigTimerIsOn.dataset['timer'] === '0') {
-        bigTimerIsOn.dataset['timer'] = '1'
-        document.getElementById('bigTimerDisplay').innerHTML = '&darr;'
-        bigTimerIsOn.style.fontSize='4rem'
-        bigTimerIsOn.style.display='block'
-    } else {
-        bigTimerIsOn.dataset['timer'] = '0'
-        document.getElementById('bigTimerDisplay').innerHTML = '&uarr;'
-        bigTimerIsOn.style.fontSize='1rem'
-        bigTimerIsOn.style.display='inline-block'
-    }
-}
-
 function settingsDisplay() {
     if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'none') {
         document.querySelector('.formContainer').style.display = 'block'
@@ -70,6 +55,8 @@ function resetIt() {
     if (document.getElementById('timeSelection').style.display=== 'none') {
         document.getElementById('timeSelection').style.display='block'
     }
+    document.getElementById('timingMode').disabled=false
+    document.getElementById('startCustomTime').disabled=false
 }
 
 function playSound() {
