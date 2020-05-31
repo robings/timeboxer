@@ -14,6 +14,7 @@
 
 body {
 	font-family: "IBMPlexMono", "Helvetica Neue", sans-serif;
+	font-size: 16px;
 	background-color: #1C2527;
 	color: #EBBD3F;
 }
@@ -197,8 +198,8 @@ select:focus {
 
 h1 {
 	text-align: center;
-	font-size: 2rem;
-	margin: 10px 0;
+	font-size: 2em;
+	margin: 10px 0 0 0;
 }
 
 section {
@@ -273,7 +274,6 @@ button {
 	border: 1px solid #444444;
 	width: 90px;
 	padding: 10px;
-	font-size: 1rem;
 }
 
 button:hover {
@@ -307,4 +307,53 @@ button:focus {
 	bottom: 5%;
 	left: 50%;
 	transform: translate(-50%);
+}
+
+@media screen and (max-width: 620px) {
+	body {
+		font-size: 12px;
+	}
+
+	#timerContainer {
+		width: 373px;
+		height: 373px;
+	}
+
+	#timer {
+		width: 255px;
+	}
+
+	.timeSelectButton, #cancelButtonContainer button {
+		padding: 7px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	body {
+		font-size: 10px;
+	}
+
+	#timerContainer {
+		width: 318px;
+		height: 318px;
+	}
+
+	#timer {
+		width: 200px;
+	}
+}
+
+@media (hover: none) {
+	.testButton, .settingsButton {
+		color: #EBBD3F;
+	}
+
+	.formContainer, select, #startCustomTime {
+		color: #EBBD3F;
+		border-color: #EBBD3F;
+	}
+
+	.close span {
+		color: #E81123;
+	}
 }
