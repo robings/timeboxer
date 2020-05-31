@@ -253,14 +253,14 @@ section div {
 	float: none;
 }
 
-.tenMins, .fifteenMins {
+.timeSelectButton {
 	color: #EBBD3F;
-	width: 50%;
+	width: 33%;
 	padding: 10px;
 	border: 1px solid #444444;
 }
 
-.tenMins:hover, .fifteenMins:hover {
+.timeSelectButton:hover {
 	border: 1px solid #EBBD3F;
 	cursor: pointer;
 }
