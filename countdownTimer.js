@@ -13,10 +13,14 @@ for (let i=0; i<(12*5); i++) {
 }
 
 let timerInterval
+let startTime
 
 function timeBox(minutesToTime) {
     let m = minutesToTime
     let s = minutesToTime * 60
+    let remainingS = s
+
+    let startTime = new Date()
 
     let hoursRotationSet = (m*(360/60)) + (((s%60*(360/60))/60))
 
@@ -30,10 +34,20 @@ function timeBox(minutesToTime) {
     setRotation(s)
     createCountdownDisplay(s)
 
+    console.log (document.getElementById('timingMode').value)
+
     timerInterval = setInterval(()=> {
-        s--
-        setRotation(s)
-        createCountdownDisplay(s)
+        if (document.getElementById('timingMode').value === 'compareSystemTime') {
+            let timeNow = new Date()
+            let timeDifference = Math.floor((timeNow - startTime)/1000)
+            remainingS = s - timeDifference
+            // console.log(timeDifference, remainingS)
+        } else {
+            remainingS--
+        }
+
+        setRotation(remainingS)
+        createCountdownDisplay(remainingS)
     }, 1000)
 
     document.getElementById('timeButtonContainer').style.display='none'
