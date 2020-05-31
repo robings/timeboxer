@@ -90,9 +90,10 @@ function cancelIt(cancelTime) {
 
 function resetIt() {
     document.querySelector('body').style.backgroundColor='#1C2527'
-    document.getElementById('timeSelection').style.display='block'
-    document.getElementById('timeboxing').style.display='none'
+    document.getElementById('timeButtonContainer').style.display='block'
+    document.getElementById('cancelButtonContainer').style.display='none'
     document.getElementById('timesUp').style.display='none'
+    setRotation(0)
 }
 
 function playSound() {

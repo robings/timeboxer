@@ -265,6 +265,13 @@ section div {
 	cursor: pointer;
 }
 
+#cancelButtonContainer {
+	display: none;
+	width: 80%;
+	margin: 0 auto;
+	float: none;
+}
+
 .timerDiv {
 	background-color: #E81123;
 	width:100%;
@@ -273,19 +280,23 @@ section div {
 }
 
 button {
-	background-color: rgba(255, 255, 255, 0);
-	color: #EEEEEE;
-	border: 1px solid #EEEEEE;
+	color: #EBBD3F;
+	background-color: #1C2527;
+	border: 1px solid #444444;
 	width: 90px;
-	height: 30px;
+	/*height: 30px;*/
+	padding: 10px;
 	margin-top: 20px;
 	font-size: 1rem;
 }
 
 button:hover {
-	background-color: rgba(255, 255, 255, 0.5);
-	color: white;
+	border-color: #EBBD3F;
 	cursor: pointer;
+}
+
+button:focus {
+	outline: none;
 }
 
 .endTimeMessage {

@@ -12,6 +12,8 @@ for (let i=0; i<(12*5); i++) {
     svg.appendChild(newLine)
 }
 
+let timerInterval
+
 function timeBox(minutesToTime) {
     let m = minutesToTime
     let s = minutesToTime * 60
@@ -23,12 +25,17 @@ function timeBox(minutesToTime) {
 
     setRotation(s)
 
-    let timerInterval = setInterval(()=> {
+    timerInterval = setInterval(()=> {
         s--
         setRotation(s)
     }, 1000)
 
     document.getElementById('timeButtonContainer').style.display='none'
+    document.getElementById('cancelButtonContainer').style.display='block'
+
+    document.querySelector('#cancelButtonContainer button').addEventListener('click', (e)=>{
+        cancelIt(timerInterval)
+    })
 }
 
 function setRotation(s) {
