@@ -30,7 +30,7 @@ body {
 }
 
 nav {
-	width: 80%;
+	width: 90%;
 	padding: 10px 10px 0 10px;
 	overflow: auto;
 	border-bottom: 1px solid #444444;
@@ -234,7 +234,7 @@ section div {
 	float: left;
 	width: 100%;
 	text-align: center;
-	color: #EEEEEE;
+	background-color: #1C2527;
 }
 
 #timeSelection {
@@ -308,10 +308,24 @@ button:focus {
 
 .endTimeMessage {
 	width: 100%;
+	height: 507px;
 	background: #E81123 url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: cover;
 	font-size: 1rem;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	border: 1px solid #444444;
+}
+
+.endTimeMessage div {
+	padding: 3px;
+	border-top: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+}
+
+.endTimeMessage button {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%);
 }

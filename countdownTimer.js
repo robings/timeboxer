@@ -20,6 +20,10 @@ function timeBox(minutesToTime) {
 
     let hoursRotationSet = (m*(360/60)) + (((s%60*(360/60))/60))
 
+    if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'block') {
+        document.querySelector('.formContainer').style.display = 'none'
+    }
+
     document.getElementById('turningClockFace').style.transform=`rotate(-${hoursRotationSet}deg)`
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
