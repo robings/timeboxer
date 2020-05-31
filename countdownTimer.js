@@ -51,6 +51,6 @@ function setRotation(s) {
     document.getElementById('turningClockFace').style.transformOrigin='center'
 
     if (s === 0) {
-        clearInterval(timerInterval)
+        timesUp(timerInterval)
     }
 }

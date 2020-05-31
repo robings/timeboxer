@@ -76,7 +76,7 @@ function timesUp(cancelTime) {
     document.getElementById('miniTimerDisplay').textContent = `00:00`
     playSound()
 
-    document.getElementById('timeboxing').style.display='none'
+    document.getElementById('timeSelection').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
     document.querySelector('body').style.backgroundColor='#E81123'
     document.getElementById('timesUp').style.display='block'
