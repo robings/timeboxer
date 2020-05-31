@@ -78,7 +78,7 @@ div.testButton:hover {
 	display: none;
 	position: absolute;
 	top: 45px;
-	left: 38px;
+	right: 5%;
 	min-height: 75px;
 	width: 260px;
 	overflow: auto;
