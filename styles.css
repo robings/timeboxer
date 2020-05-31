@@ -19,8 +19,8 @@ body {
 }
 
 #timerContainer {
-	width: 325px;
-	height: 325px;
+	width: 600px;
+	height: 600px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -97,6 +97,15 @@ div.testButton:hover {
 	background-color: #1C2527;
 	border: 1px solid #444444;
 	padding: 5px;
+}
+
+.formContainer:hover {
+	color: #EBBD3F;
+	border-color: #EBBD3F;
+}
+
+.formContainer:hover #alarms {
+	color: #EBBD3F;
 }
 
 .formGroup {
@@ -215,7 +224,7 @@ h1 {
 
 section {
 	position: relative;
-	width: 80%;
+	width: 100%;
 	overflow: auto;
 	margin: 0 auto;
 	text-align: center;
@@ -243,35 +252,34 @@ section div {
 	position: relative;
 }
 
-.tenMins {
-	background-color: #10893E;
-	color: #EEEEEE;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timer {
+	width: 400px;
 }
 
-.fifteenMins {
-	background-color: #0063B1;
-	color: #EEEEEE;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timeButtonContainer {
+	width: 80%;
+	margin: 0 auto;
+	float: none;
 }
 
-.tenMins:hover {
-	background-color: #00CC6A;
+.timeSelectButton {
+	color: #EBBD3F;
+	width: 33%;
+	padding: 10px;
 	border: 1px solid #444444;
+}
+
+.timeSelectButton:hover {
+	border: 1px solid #EBBD3F;
 	cursor: pointer;
 }
 
-
-.fifteenMins:hover {
-	background-color: #0078D7;
-	border: 1px solid #444444;
-	cursor: pointer;
+#cancelButtonContainer {
+	display: none;
+	width: 80%;
+	margin: 0 auto;
+	float: none;
 }
-
 
 .timerDiv {
 	background-color: #E81123;
@@ -281,19 +289,21 @@ section div {
 }
 
 button {
-	background-color: rgba(255, 255, 255, 0);
-	color: #EEEEEE;
-	border: 1px solid #EEEEEE;
+	color: #EBBD3F;
+	background-color: #1C2527;
+	border: 1px solid #444444;
 	width: 90px;
-	height: 30px;
-	margin-top: 20px;
+	padding: 10px;
 	font-size: 1rem;
 }
 
 button:hover {
-	background-color: rgba(255, 255, 255, 0.5);
-	color: white;
+	border-color: #EBBD3F;
 	cursor: pointer;
+}
+
+button:focus {
+	outline: none;
 }
 
 .endTimeMessage {

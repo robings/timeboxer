@@ -36,7 +36,7 @@ function settingsDisplay() {
     }
 }
 
-function timebox(minutesToTime) {
+function timeboxOld(minutesToTime) {
     let seconds=0
     let timeLeft=((minutesToTime*60000)-(seconds))
     createCountdownDisplay(timeLeft)
@@ -58,25 +58,20 @@ function timebox(minutesToTime) {
     document.getElementById('timeboxing').style.display='block'
 }
 
-function createCountdownDisplay(timeLeft) {
-    let timeLeftInSeconds = timeLeft/1000
+function createCountdownDisplay(timeLeftInSeconds) {
     let seconds = timeLeftInSeconds%60
     let minutes=(timeLeftInSeconds-seconds)/60
     let secondsToDisplay = seconds < 10 ? '0'+seconds : seconds
     let minutesToDisplay = minutes < 10 ? '0'+minutes : minutes
     document.getElementById('miniTimerDisplay').textContent = `${minutesToDisplay}:${secondsToDisplay}`
-    if (document.getElementById('minutesToTime').dataset['timer'] === '1') {
-        document.getElementById('minutesToTime').textContent = `${minutesToDisplay}:${secondsToDisplay}`
-    }
 }
 
 function timesUp(cancelTime) {
-    window.focus()
     clearTimeout(cancelTime)
     document.getElementById('miniTimerDisplay').textContent = `00:00`
     playSound()
 
-    document.getElementById('timeboxing').style.display='none'
+    document.getElementById('timeSelection').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
     document.querySelector('body').style.backgroundColor='#E81123'
     document.getElementById('timesUp').style.display='block'
@@ -90,9 +85,13 @@ function cancelIt(cancelTime) {
 
 function resetIt() {
     document.querySelector('body').style.backgroundColor='#1C2527'
-    document.getElementById('timeSelection').style.display='block'
-    document.getElementById('timeboxing').style.display='none'
+    document.getElementById('timeButtonContainer').style.display='block'
+    document.getElementById('cancelButtonContainer').style.display='none'
     document.getElementById('timesUp').style.display='none'
+    setRotation(0, 1)
+    if (document.getElementById('timeSelection').style.display=== 'none') {
+        document.getElementById('timeSelection').style.display='block'
+    }
 }
 
 function playSound() {
