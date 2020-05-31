@@ -36,28 +36,6 @@ function settingsDisplay() {
     }
 }
 
-function timeboxOld(minutesToTime) {
-    let seconds=0
-    let timeLeft=((minutesToTime*60000)-(seconds))
-    createCountdownDisplay(timeLeft)
-    let timeoutVar=setInterval(()=>{
-        seconds+=1000
-        timeLeft=((minutesToTime*60000)-(seconds))
-        createCountdownDisplay(timeLeft)
-        if (timeLeft == 0) {
-            timesUp(timeoutVar)
-        }
-    },1000)
-    document.getElementById('timeSelection').style.display='none'
-    if (document.getElementById('minutesToTime').dataset['timer'] === '0') {
-        document.getElementById('minutesToTime').textContent = minutesToTime
-    }
-    document.querySelector('#timeboxing button').addEventListener('click', (e)=>{
-        cancelIt(timeoutVar)
-    })
-    document.getElementById('timeboxing').style.display='block'
-}
-
 function createCountdownDisplay(timeLeftInSeconds) {
     let seconds = timeLeftInSeconds%60
     let minutes=(timeLeftInSeconds-seconds)/60
