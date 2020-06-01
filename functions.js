@@ -60,20 +60,20 @@ function resetIt() {
 }
 
 function playSound() {
-    let alarmChoice=document.getElementById("alarms").value
+    let alarmChoice=document.getElementById('alarms').value
 
-    if (alarmChoice!="noSound") {
+    if (alarmChoice!='noSound') {
         switch(alarmChoice) {
-            case "hippo":
+            case 'hippo':
                 alarmSound.src='sounds/hippo.mp3'
                 break
-            case "hippoChord":
+            case 'hippoChord':
                 alarmSound.src='sounds/hippoChordReverb.mp3'
                 break
-            case "guitarChord":
+            case 'guitarChord':
                 alarmSound.src='sounds/guitarChord.mp3'
                 break
-            case "rockChord":
+            case 'rockChord':
                 alarmSound.src='sounds/rockChord.mp3'
                 break
         }
