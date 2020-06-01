@@ -16,8 +16,10 @@ function toggleMiniTimerDisplay() {
 function settingsDisplay() {
     if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'none') {
         document.querySelector('.formContainer').style.display = 'block'
+        document.querySelector('body').addEventListener('keydown', logKey)
     } else {
         document.querySelector('.formContainer').style.display = 'none'
+        document.querySelector('body').removeEventListener('keydown', logKey)
     }
 }
 
@@ -78,5 +80,13 @@ function playSound() {
                 break
         }
         alarmSound.play()
+    }
+}
+
+function logKey(e) {
+    if (e.key === 'Escape') {
+        if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'block') {
+            settingsDisplay()
+        }
     }
 }
