@@ -3,17 +3,12 @@
 	src: url(./IBMPlexMono-Regular.ttf);
 }
 
-@font-face {
-	font-family: IBMPlexSans;
-	src: url(./IBMPlexSans-Regular.ttf);
-}
-
 * {
 	box-sizing: border-box;
 }
 
 body {
-	font-family: "IBMPlexMono", "Helvetica Neue", sans-serif;
+	font-family: 'IBMPlexMono', 'Helvetica Neue', sans-serif;
 	font-size: 16px;
 	background-color: #1C2527;
 	color: #EBBD3F;
@@ -44,7 +39,6 @@ nav .miniTimer {
 	float: left;
 	padding: 3px;
 	overflow: auto;
-	color: #444444;
 }
 
 nav .testButton:hover {
@@ -198,7 +192,6 @@ select:focus {
 
 h1 {
 	text-align: center;
-	font-size: 2em;
 	margin: 10px 0 0 0;
 }
 
@@ -222,11 +215,6 @@ section div {
 	position: relative;
 }
 
-#timeboxing {
-	display: none;
-	position: relative;
-}
-
 #timesUp {
 	display: none;
 	position: relative;
@@ -243,7 +231,6 @@ section div {
 }
 
 .timeSelectButton {
-	color: #EBBD3F;
 	width: 33%;
 	padding: 10px;
 	border: 1px solid #444444;
@@ -256,9 +243,6 @@ section div {
 
 #cancelButtonContainer {
 	display: none;
-	width: 80%;
-	margin: 0 auto;
-	float: none;
 }
 
 button {
@@ -279,12 +263,10 @@ button:focus {
 }
 
 .endTimeMessage {
-	width: 100%;
 	height: 517px;
 	background: #E81123 url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: cover;
 	padding-top: 25px;
-	padding-bottom: 25px;
 	border: 1px solid #444444;
 }
 
