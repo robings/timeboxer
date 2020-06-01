@@ -6,79 +6,39 @@ function firstClick() {
 function toggleMiniTimerDisplay() {
     if (window.getComputedStyle(document.getElementById('miniTimerDisplay')).display === 'none') {
         document.getElementById('miniTimerDisplay').style.display = 'block'
-        document.querySelector('.miniTimer').style.color = 'black'
+        document.querySelector('.miniTimer').style.color = '#444444'
     } else {
         document.getElementById('miniTimerDisplay').style.display = 'none'
-        document.querySelector('.miniTimer').style.color = 'gray'
-    }
-}
-
-function toggleBigTimerDisplay() {
-    bigTimerIsOn = document.getElementById('minutesToTime')
-    if (bigTimerIsOn.dataset['timer'] === '0') {
-        bigTimerIsOn.dataset['timer'] = '1'
-        document.getElementById('bigTimerDisplay').innerHTML = '&darr;'
-        bigTimerIsOn.style.fontSize='4rem'
-        bigTimerIsOn.style.display='block'
-    } else {
-        bigTimerIsOn.dataset['timer'] = '0'
-        document.getElementById('bigTimerDisplay').innerHTML = '&uarr;'
-        bigTimerIsOn.style.fontSize='1rem'
-        bigTimerIsOn.style.display='inline-block'
+        document.querySelector('.miniTimer').style.color = '#444444'
     }
 }
 
 function settingsDisplay() {
     if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'none') {
         document.querySelector('.formContainer').style.display = 'block'
+        document.querySelector('body').addEventListener('keydown', logKey)
     } else {
         document.querySelector('.formContainer').style.display = 'none'
+        document.querySelector('body').removeEventListener('keydown', logKey)
     }
 }
 
-function timebox(minutesToTime) {
-    let seconds=0
-    let timeLeft=((minutesToTime*60000)-(seconds))
-    createCountdownDisplay(timeLeft)
-    let timeoutVar=setInterval(()=>{
-        seconds+=1000
-        timeLeft=((minutesToTime*60000)-(seconds))
-        createCountdownDisplay(timeLeft)
-        if (timeLeft == 0) {
-            timesUp(timeoutVar)
-        }
-    },1000)
-    document.getElementById('timeSelection').style.display='none'
-    if (document.getElementById('minutesToTime').dataset['timer'] === '0') {
-        document.getElementById('minutesToTime').textContent = minutesToTime
-    }
-    document.querySelector('#timeboxing button').addEventListener('click', (e)=>{
-        cancelIt(timeoutVar)
-    })
-    document.getElementById('timeboxing').style.display='block'
-}
-
-function createCountdownDisplay(timeLeft) {
-    let timeLeftInSeconds = timeLeft/1000
+function createCountdownDisplay(timeLeftInSeconds) {
     let seconds = timeLeftInSeconds%60
     let minutes=(timeLeftInSeconds-seconds)/60
     let secondsToDisplay = seconds < 10 ? '0'+seconds : seconds
     let minutesToDisplay = minutes < 10 ? '0'+minutes : minutes
     document.getElementById('miniTimerDisplay').textContent = `${minutesToDisplay}:${secondsToDisplay}`
-    if (document.getElementById('minutesToTime').dataset['timer'] === '1') {
-        document.getElementById('minutesToTime').textContent = `${minutesToDisplay}:${secondsToDisplay}`
-    }
 }
 
 function timesUp(cancelTime) {
-    window.focus()
     clearTimeout(cancelTime)
     document.getElementById('miniTimerDisplay').textContent = `00:00`
     playSound()
 
-    document.getElementById('timeboxing').style.display='none'
+    document.getElementById('timeSelection').style.display='none'
     document.querySelector('#timesUp button').addEventListener('click', resetIt)
-    document.querySelector('body').style.backgroundColor='orangered'
+    document.querySelector('body').style.backgroundColor='#E81123'
     document.getElementById('timesUp').style.display='block'
 }
 
@@ -89,30 +49,44 @@ function cancelIt(cancelTime) {
 }
 
 function resetIt() {
-    document.querySelector('body').style.backgroundColor='whitesmoke'
-    document.getElementById('timeSelection').style.display='block'
-    document.getElementById('timeboxing').style.display='none'
+    document.querySelector('body').style.backgroundColor='#1C2527'
+    document.getElementById('timeButtonContainer').style.display='block'
+    document.getElementById('cancelButtonContainer').style.display='none'
     document.getElementById('timesUp').style.display='none'
+    setRotation(0, 1)
+    if (document.getElementById('timeSelection').style.display=== 'none') {
+        document.getElementById('timeSelection').style.display='block'
+    }
+    document.getElementById('timingMode').disabled=false
+    document.getElementById('startCustomTime').disabled=false
 }
 
 function playSound() {
-    let alarmChoice=document.getElementById("alarms").value
+    let alarmChoice=document.getElementById('alarms').value
 
-    if (alarmChoice!="noSound") {
+    if (alarmChoice!='noSound') {
         switch(alarmChoice) {
-            case "hippo":
+            case 'hippo':
                 alarmSound.src='sounds/hippo.mp3'
                 break
-            case "hippoChord":
+            case 'hippoChord':
                 alarmSound.src='sounds/hippoChordReverb.mp3'
                 break
-            case "guitarChord":
+            case 'guitarChord':
                 alarmSound.src='sounds/guitarChord.mp3'
                 break
-            case "rockChord":
+            case 'rockChord':
                 alarmSound.src='sounds/rockChord.mp3'
                 break
         }
         alarmSound.play()
+    }
+}
+
+function logKey(e) {
+    if (e.key === 'Escape') {
+        if (window.getComputedStyle(document.querySelector('.formContainer')).display === 'block') {
+            settingsDisplay()
+        }
     }
 }

@@ -1,27 +1,37 @@
+@font-face {
+	font-family: IBMPlexMono;
+	src: url(./IBMPlexMono-Regular.ttf);
+}
+
 * {
 	box-sizing: border-box;
 }
 
-html {
-	background-color: whitesmoke;
-	font-family: "Helvetica Neue", "sans-serif";
+body {
+	font-family: 'IBMPlexMono', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	background-color: #1C2527;
+	color: #EBBD3F;
 }
 
-body {
-	width: 325px;
-	height: 325px;
-	border: 1px solid lightgray;
+#timerContainer {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #444444;
 	border-radius: 5px;
-	margin: 5px;
 }
 
 nav {
-	width: 80%;
+	width: 90%;
 	padding: 10px 10px 0 10px;
 	overflow: auto;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #444444;
 	margin: 0 auto;
-	color: gray;
+	color: #444444;
 	font-size: 0.75rem;
 }
 
@@ -29,7 +39,14 @@ nav .miniTimer {
 	float: left;
 	padding: 3px;
 	overflow: auto;
-	color: black;
+}
+
+nav .testButton:hover {
+	color: #EBBD3F;
+}
+
+nav #miniTimerDisplay {
+	color: #EBBD3F;
 }
 
 .miniTimer div {
@@ -41,21 +58,13 @@ div.testButton:hover {
 	cursor: pointer;
 }
 
-#bigTimerDisplay {
-	color: black;
-}
-
-#bigTimerDisplay:hover {
-	cursor: pointer;
-}
-
 .settingsButton {
 	float: right;
 	padding: 3px;
 }
 
 .settingsButton:hover {
-	color: black;
+	color: #EBBD3F;
 	cursor: pointer;
 }
 
@@ -64,18 +73,27 @@ div.testButton:hover {
 	display: none;
 	position: absolute;
 	top: 45px;
-	left: 38px;
+	right: 5%;
 	min-height: 75px;
 	width: 260px;
 	overflow: auto;
-	background-color: whitesmoke;
-	border: 1px solid lightgray;
+	background-color: #1C2527;
+	border: 1px solid #444444;
 	padding: 5px;
+}
+
+.formContainer:hover {
+	color: #EBBD3F;
+	border-color: #EBBD3F;
+}
+
+.formContainer:hover select {
+	color: #EBBD3F;
 }
 
 .formGroup {
 	display: inline-block;
-	border: 1px solid lightgray;
+	border: 1px solid #444444;
 	padding: 2px;
 	width: 100%;
 	margin-bottom: 5px;
@@ -87,40 +105,32 @@ div.testButton:hover {
 	margin: 0 5px;
 }
 
-.startCustomTime {
-	display: inline-block;
-	border: 1px solid lightgray;
-	padding: 2px 10px;
-}
-
-.startCustomTime:hover {
-	border-color: black;
-	cursor: pointer;
-}
-
 .close {
 	width: 100%;
 	text-align: right;
 }
 
 .close span:hover {
-	color: orangered;
+	color: #E81123;
 	cursor: pointer;
 }
 
 nav button {
+	display: inline-block;
 	margin: 0;
 	background-color: inherit;
 	color: inherit;
 	font-size: inherit;
-	border-color: gray;
-	height: 20px;
+	border-color: #444444;
+	border-radius: 4px;
+	width: auto;
+	height: 23px;
+	padding: 2px 10px;
 }
 
 nav button:hover {
-	background-color: white;
-	color: black;
-	border-color: black;
+	color: #EBBD3F;
+	border-color: #EBBD3F;
 }
 
 nav form {
@@ -132,22 +142,62 @@ nav form label {
 }
 
 nav form:hover {
-	color: black;
+	color: #EBBD3F;
 }
 
 .slider {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 3px;
+	background: #444444;
+	outline: none;
+	border-radius: 3px;
 	width: 125px;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	border: 0;
+	background: url('./images/slider.svg');
+	cursor: pointer;
+}
+
+select {
+	background-color: #1C2527;
+	color: #444444;
+	border: 1px solid #444444;
+	border-radius: 4px;
+	padding: 2px 3px;
+}
+
+select:hover {
+	color: #EBBD3F;
+	border-color: #EBBD3F;
+}
+
+select:focus {
+	outline: none;
 }
 
 h1 {
 	text-align: center;
-	font-size: 2rem;
-	margin: 10px 0;
+	margin: 10px 0 0 0;
 }
 
 section {
 	position: relative;
-	width: 80%;
+	width: 100%;
 	overflow: auto;
 	margin: 0 auto;
 	text-align: center;
@@ -157,16 +207,11 @@ section div {
 	float: left;
 	width: 100%;
 	text-align: center;
-	color: whitesmoke;
+	background-color: #1C2527;
 }
 
 #timeSelection {
 	display: block;
-	position: relative;
-}
-
-#timeboxing {
-	display: none;
 	position: relative;
 }
 
@@ -175,64 +220,122 @@ section div {
 	position: relative;
 }
 
-.tenMins {
-	background-color: darkgreen;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timer {
+	width: 400px;
 }
 
-.fifteenMins {
-	background-color: darkblue;
-	width: 50%;
-	padding: 40px;
-	border: 1px solid transparent;
+#timeButtonContainer {
+	width: 80%;
+	margin: 0 auto;
+	float: none;
 }
 
-.tenMins:hover {
-	background-color: green;
-	border: 1px solid black;
+.timeSelectButton {
+	width: 33%;
+	padding: 10px;
+	border: 1px solid #444444;
+}
+
+.timeSelectButton:hover {
+	border: 1px solid #EBBD3F;
 	cursor: pointer;
 }
 
-
-.fifteenMins:hover {
-	background-color: blue;
-	border: 1px solid black;
-	cursor: pointer;
-}
-
-
-.timerDiv {
-	background-color: orangered;
-	width:100%;
-	text-align: center;
-	padding: 20px;
+#cancelButtonContainer {
+	display: none;
 }
 
 button {
-	background-color: rgba(255, 255, 255, 0);
-	color: white;
-	border: 1px solid white;
+	color: #EBBD3F;
+	background-color: #1C2527;
+	border: 1px solid #444444;
 	width: 90px;
-	height: 30px;
-	margin-top: 20px;
-	font-size: 1rem;
+	padding: 10px;
 }
 
 button:hover {
-	background-color: rgba(255, 255, 255, 0.5);
-	color: white;
+	border-color: #EBBD3F;
 	cursor: pointer;
 }
 
+button:focus {
+	outline: none;
+}
+
 .endTimeMessage {
-	width: 100%;
-	background-color: red;
-	background: url('images/pygmy-hippos.jpg') no-repeat;
+	height: 517px;
+	background: #E81123 url('images/pygmy-hippos.jpg') no-repeat;
 	background-size: cover;
-	font-size: 1rem;
 	padding-top: 25px;
-	padding-bottom: 25px;
-	border: 1px solid black;
+	border: 1px solid #444444;
+}
+
+.endTimeMessage div {
+	padding: 3px;
+	border-top: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+}
+
+.endTimeMessage button {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+@media screen and (max-width: 620px) {
+	body {
+		font-size: 12px;
+	}
+
+	#timerContainer {
+		width: 373px;
+		height: 373px;
+	}
+
+	#timer {
+		width: 255px;
+	}
+
+	.timeSelectButton, #cancelButtonContainer button {
+		padding: 7px;
+	}
+
+	.endTimeMessage {
+		height: 299px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	body {
+		font-size: 10px;
+	}
+
+	#timerContainer {
+		width: 318px;
+		height: 318px;
+	}
+
+	#timer {
+		width: 200px;
+	}
+
+	.endTimeMessage {
+		height: 248px;
+	}
+}
+
+@media (hover: none) {
+	.testButton, .settingsButton {
+		color: #EBBD3F;
+	}
+
+	.formContainer, select, #startCustomTime {
+		color: #EBBD3F;
+		border-color: #EBBD3F;
+	}
+
+	.close span {
+		color: #E81123;
+	}
 }

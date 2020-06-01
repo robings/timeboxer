@@ -8,16 +8,19 @@
 	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
 	<script defer src="functions.js"></script>
+	<script defer src="countdownTimer.js"></script>
 	<script defer src="script.js"></script>
 </head>
 
 <body>
+
+<div id="timerContainer">
+
 	<nav>
 		<div class='miniTimer'>
 			<div class="testButton" data-time="0.1">
 				<ion-icon name="timer"></ion-icon>
 			</div>
-			<div id='bigTimerDisplay'>&uarr;</div>
 			<div id='miniTimerDisplay'>00:00</div>
 		</div>
 		<div class='settingsButton'>
@@ -26,9 +29,9 @@
 		<div class='formContainer'>
 			<form>
 				<div class='formGroup'>
-					<input type='range' min='1' max='30' value='5' class='slider' />
+					<input type='range' min='1' max='59' value='5' class='slider' />
 					<div id='customTimeDisplay'></div>
-					<div class='startCustomTime'>go</div>
+					<button id='startCustomTime'>go</button>
 				</div>
 				<div class='formGroup'>
 					<label><ion-icon name="notifications"></ion-icon></label>
@@ -40,33 +43,113 @@
 						<option value="rockChord">rock chord</option>
 					</select>
 				</div>
+				<div class="formGroup">
+					<label><ion-icon name="timer"></ion-icon> mode</label>
+					<select id="timingMode" name="timingMode">
+						<option value="compareSystemTime">system time compare</option>
+						<option value="decrement">decrement</option>
+					</select>
+				</div>
 				<div class='close'><span>X</span></div>
 			</form>
 		</div>
 	</nav>
+
 	<h1>timeboxer</h1>
 	<section id="container">
-		<div id='timeSelection'>
-			<div id="tenMinutes" class="tenMins" data-time="10">
-				give me 10 minutes
+
+		<div id="timeSelection">
+
+			<div id="clockTimerContainer">
+				<svg id="timer" viewBox='0 0 400 400'>
+					<g id="timeRing">
+						<circle r='152' cx='200' cy='200' style='fill: #1C2527' />
+						<circle r='150' cx='200' cy='200' style='fill: #1C2527; stroke-width: 1; stroke: #444444;' />
+						<circle r='125' cx='200' cy='200' style='fill: #1C2527; stroke-width: 1; stroke: #444444;' />
+					</g>
+
+					<g id="secondsRing">
+						<circle r='123' cx='200' cy='200' style='fill: #1C2527; stroke-width: 1; stroke: #E81123;' />
+						<circle r='111' cx='200' cy='200' style='fill: #1C2527; stroke-width: 1; stroke: #E81123;' />
+						<line x1='200' y1='79' x2='200' y2='95' style='stroke-width: 1; stroke: #E81123;' />
+					</g>
+
+					<g id="timePointer">
+						<line id='minutes' x1='198' y1='105' x2='198' y2='84' style='stroke-width: 1; stroke: #CA6702;' />
+						<line id='minutes' x1='202' y1='110' x2='202' y2='84' style='stroke-width: 1; stroke: #CA6702;' />
+						<line id='minutes' x1='200' y1='80' x2='196' y2='88' style='stroke-width: 1; stroke: #CA6702;' />
+						<line id='minutes' x1='200' y1='80' x2='204' y2='88' style='stroke-width: 1; stroke: #CA6702;' />
+					</g>
+
+					<g id='turningClockFace'>
+						<text x='196' y='67' style='fill: #EBBD3F; '>0</text>
+						<g style='transform: rotate(30deg); transform-origin: center;'>
+							<text x='196' y='67' style='fill: #EBBD3F;'>5</text>
+						</g>
+						<g style='transform: rotate(60deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>10</text>
+						</g>
+						<g style='transform: rotate(90deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>15</text>
+						</g>
+						<g style='transform: rotate(120deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>20</text>
+						</g>
+						<g style='transform: rotate(150deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>25</text>
+						</g>
+						<g style='transform: rotate(180deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>30</text>
+						</g>
+						<g style='transform: rotate(210deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>35</text>
+						</g>
+						<g style='transform: rotate(240deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>40</text>
+						</g>
+						<g style='transform: rotate(270deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>45</text>
+						</g>
+						<g style='transform: rotate(300deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>50</text>
+						</g>
+						<g style='transform: rotate(330deg); transform-origin: center;'>
+							<text x='192' y='67' style='fill: #EBBD3F;'>55</text>
+						</g>
+					</g>
+				</svg>
 			</div>
-			<div id="fifteenMinutes" class="fifteenMins" data-time="15">
-				give me 15 minutes
+
+			<div id="timeButtonContainer">
+				<div class="timeSelectButton">
+					5 minutes
+				</div>
+				<div class="timeSelectButton">
+					10 minutes
+				</div>
+				<div class="timeSelectButton">
+					15 minutes
+				</div>
 			</div>
-		</div>
-		<div id='timeboxing'>
-			<div class="timerDiv">
-				<div>Don't close this browser window I'm timeboxing: <span id='minutesToTime' data-timer="0"></span> minutes</div>
+
+			<div id="cancelButtonContainer">
 				<button>cancel</button>
 			</div>
+
 		</div>
-		<div id='timesUp'>
+
+		<div id="timesUp">
+
 			<div class="endTimeMessage">
-				<div>Time to consult a fellow hippo</div>
+				<div>Time to consult a fellow dev</div>
 				<button>reset</button>
 			</div>
+
 		</div>
+
 	</section>
+
+</div>
 
 </body>
 
