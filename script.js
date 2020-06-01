@@ -27,7 +27,7 @@ document.querySelector('input[type="range"]').addEventListener('input', ()=>{
 document.querySelector('.settingsButton ion-icon').addEventListener('click', settingsDisplay)
 
 document.querySelector('.close span').addEventListener('click', ()=> {
-	document.querySelector('.formContainer').style.display = 'none'
+	settingsDisplay()
 })
 
 document.getElementById('alarms').addEventListener('change', playSound)
